@@ -719,6 +719,10 @@ class PHPExcel_Cell
             $pRange = self::DEFAULT_RANGE;
         }
 
+        if (is_array($pRange)) {
+            $pRange = current($pRange);
+        }
+
         // Uppercase coordinate
         $pRange = strtoupper($pRange);
 
