@@ -298,7 +298,7 @@ class PHPExcel_Chart_DataSeriesValues
             if ($flatten) {
                 $this->dataValues = PHPExcel_Calculation_Functions::flattenArray($newDataValues);
                 foreach ($this->dataValues as &$dataValue) {
-                    if ((!empty($dataValue)) && ($dataValue[0] == '#')) {
+                    if (is_array($dataValue) && (!empty($dataValue)) && ($dataValue[0] == '#')) {
                         $dataValue = 0.0;
                     }
                 }
